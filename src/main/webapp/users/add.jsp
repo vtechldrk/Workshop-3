@@ -23,13 +23,13 @@
                         <!-- Card Body -->
                         <div class="card-body">
                             <div class="chart-area">
-                                <form action="update">
+                                <form method="post">
                                     Nazwa:
-                                    <input type="text" class="w-100 form-control">
+                                    <input type="text" name="userName" value="userName" class="w-100 form-control">
                                     eMail:
-                                    <input type="email" class="w-100 form-control">
+                                    <input type="email" name="email" value="email@usera.com" class="w-100 form-control">
                                     Hasło:
-                                    <input type="password" class="w-100 form-control">
+                                    <input type="password" name="password" class="w-100 form-control">
                                     </br>
                                     </br>
                                     <input type="submit" value="Zapisz" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">

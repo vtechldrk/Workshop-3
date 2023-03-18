@@ -36,12 +36,16 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>imie</td>
-                                        <td>eMail</td>
-                                        <td>Usuń | Edit | Pokaż</td>
-                                    </tr>
+
+                                    <c:forEach var="user" items="${users}">
+                                        <tr>
+                                          <td> ${user.id} </td>
+                                          <td> ${user.userName} </td>
+                                          <td> ${user.email} </td>
+                                          <td> <a href="/user/delete?id=${user.id}"> Usuń </a>| <a href="/user/edit?id=${user.id}"> Edytuj </a>| <a href="/user/show?id=${user.id}">Pokaż </a></td>
+                                        </tr>
+                                    </c:forEach>
+
                                     </tbody>
                                 </table>
                             </div>

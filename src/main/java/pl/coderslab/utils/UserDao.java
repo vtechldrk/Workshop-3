@@ -67,11 +67,12 @@ public class UserDao {
         try (Connection conn = DbUtil.getConnection()){
             PreparedStatement statement =
                     conn.prepareStatement(UPDATE_USER_QUERY);
+
             statement.setString(1, user.getUserName());
             statement.setString(2, user.getEmail());
             statement.setString(3, hashPassword(user.getPassword()));
             statement.setInt(4, user.getId());
-
+            //System.out.println(statement);
             statement.executeUpdate();
 
         } catch (SQLException e) {
@@ -109,7 +110,7 @@ public class UserDao {
             }
             return allUsers;
         } catch (SQLException e) {
-            System.out.println("Błąd modyfikacji rekordu." + e.getErrorCode());
+            System.out.println("Błąd listy rekordu." + e.getErrorCode());
             //e.printStackTrace();
             return null;
         }
